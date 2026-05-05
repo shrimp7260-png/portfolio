@@ -7,70 +7,71 @@
   <title>Mellow Games</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="#" aria-label="Mellow Games home">
-      <span class="logo-mark" aria-hidden="true">✦</span>
+    <a class="brand" href="#" aria-label="Mellow Games">
+      <span class="brand-mark" aria-hidden="true"></span>
       <span>Mellow Games</span>
     </a>
-    <nav class="site-nav" aria-label="Primary navigation">
+    <nav class="site-nav" aria-label="サイト内ナビゲーション">
       <a href="#games">Games</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-copy">
-        <p class="eyebrow">Small Web Game Collection</p>
-        <h1 id="page-title">Mellow Games</h1>
+    <section class="hero" aria-labelledby="site-title">
+      <div class="hero-text">
+        <p class="section-label">web game portfolio</p>
+        <h1 id="site-title">Mellow Games</h1>
         <p class="lead">やさしく遊べる小さなゲームたち。</p>
       </div>
 
-      <div class="hero-visual" aria-label="やわらかいゲーム作品集のイラスト">
-        <div class="visual-card visual-card-main">
-          <span class="visual-icon">☕</span>
-          <span class="visual-line visual-line-long"></span>
-          <span class="visual-line"></span>
+      <div class="hero-art" aria-label="フラットでやわらかいゲーム作品集のビジュアル">
+        <div class="art-screen">
+          <span class="screen-bar"></span>
+          <span class="screen-pill"></span>
+          <span class="screen-dot dot-one"></span>
+          <span class="screen-dot dot-two"></span>
+          <span class="screen-dot dot-three"></span>
+          <span class="screen-line line-one"></span>
+          <span class="screen-line line-two"></span>
         </div>
-        <div class="visual-card visual-card-small top">
-          <span>🧾</span>
-        </div>
-        <div class="visual-card visual-card-small bottom">
-          <span>🍖</span>
-        </div>
-        <span class="dot dot-green"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="soft-shape shape-one"></span>
-        <span class="soft-shape shape-two"></span>
+        <span class="art-tile tile-left"></span>
+        <span class="art-tile tile-right"></span>
+        <span class="art-ring"></span>
+        <span class="art-spark spark-one"></span>
+        <span class="art-spark spark-two"></span>
+        <span class="art-blob blob-green"></span>
+        <span class="art-blob blob-yellow"></span>
       </div>
     </section>
 
-    <section class="games-section" id="games" aria-labelledby="games-title">
+    <section class="games" id="games" aria-labelledby="games-title">
       <div class="section-heading">
-        <p class="eyebrow">Games</p>
+        <p class="section-label">games</p>
         <h2 id="games-title">ゲーム一覧</h2>
       </div>
 
       <div class="game-grid">
         <article class="game-card">
-          <div class="game-icon" aria-hidden="true">🧾</div>
+          <div class="game-icon" aria-label="レシートのアイコン"><span>🧾</span></div>
           <h3>レジ打ちゲーム</h3>
           <p>流れてくる商品の値段を素早く入力するカジュアルゲーム。</p>
           <a class="play-button" href="https://shrimp7260-png.github.io/cashier_game/">Play</a>
         </article>
 
         <article class="game-card">
-          <div class="game-icon" aria-hidden="true">🍖</div>
+          <div class="game-icon" aria-label="焼き加減のアイコン"><span>🍖</span></div>
           <h3>焼き加減ゲーム</h3>
           <p>ちょうどいい焼き加減で止めるタイミングゲーム。</p>
           <a class="play-button" href="https://shrimp7260-png.github.io/grill_game/">Play</a>
         </article>
 
         <article class="game-card">
-          <div class="game-icon" aria-hidden="true">☕</div>
+          <div class="game-icon" aria-label="カフェのアイコン"><span>☕</span></div>
           <h3>ミニカフェゲーム</h3>
           <p>ボタン操作でドリンクを作るシンプル操作ゲーム。</p>
           <a class="play-button" href="https://shrimp7260-png.github.io/cafe_button/">Play</a>
