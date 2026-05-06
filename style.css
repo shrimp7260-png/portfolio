@@ -48,6 +48,7 @@ a {
 
 .site-header,
 .hero,
+.portal,
 .games,
 .site-footer {
   width: min(1080px, calc(100% - 44px));
@@ -131,8 +132,8 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(310px, 0.82fr);
   align-items: center;
   gap: clamp(42px, 8vw, 92px);
-  min-height: calc(100vh - 96px);
-  padding: 34px 0 82px;
+  min-height: min(620px, calc(100vh - 96px));
+  padding: 34px 0 66px;
 }
 
 .hero-text {
@@ -751,7 +752,7 @@ h1 {
 }
 
 .games {
-  padding: 16px 0 96px;
+  padding: 52px 0 96px;
 }
 
 .section-heading {
@@ -787,6 +788,126 @@ h2 {
   border-color: rgba(255, 139, 167, 0.34);
   box-shadow: 0 18px 38px rgba(51, 39, 42, 0.075);
   transform: translateY(-4px);
+}
+
+.portal {
+  padding: 8px 0 48px;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.portal-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--card-shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.portal-card:hover {
+  border-color: rgba(255, 139, 167, 0.34);
+  box-shadow: 0 18px 38px rgba(51, 39, 42, 0.075);
+  transform: translateY(-4px);
+}
+
+.portal-card::before {
+  position: absolute;
+  inset: auto -42px -56px auto;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: var(--soft-accent);
+  content: "";
+}
+
+.portal-card-templates::before {
+  background: var(--soft-tertiary);
+}
+
+.portal-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(51, 39, 42, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 198, 199, 0.58), rgba(195, 240, 202, 0.5)),
+    var(--card);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.portal-kicker {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  color: var(--main);
+  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.portal-card strong {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.portal-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 23rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.portal-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 150px;
+  min-height: 52px;
+  margin-top: auto;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: var(--main);
+  color: var(--text);
+  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.portal-card-templates .portal-button {
+  background: var(--tertiary);
+}
+
+.portal-card:hover .portal-button {
+  box-shadow: 0 10px 20px rgba(255, 139, 167, 0.22);
+  transform: translateY(-2px);
 }
 
 .game-icon {
@@ -1032,6 +1153,7 @@ h2 {
 
 .brand:focus-visible,
 .site-nav a:focus-visible,
+.portal-card:focus-visible,
 .play-button:focus-visible {
   outline: 3px solid rgba(195, 240, 202, 0.82);
   outline-offset: 4px;
@@ -1070,6 +1192,10 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
   .game-card {
     min-height: auto;
   }
@@ -1078,6 +1204,7 @@ h2 {
 @media (max-width: 560px) {
   .site-header,
   .hero,
+  .portal,
   .games,
   .site-footer {
     width: min(100% - 30px, 1080px);
@@ -1103,7 +1230,7 @@ h2 {
   }
 
   .hero {
-    padding: 24px 0 58px;
+    padding: 24px 0 44px;
   }
 
   .hero-art {
@@ -1210,7 +1337,38 @@ h2 {
   }
 
   .games {
-    padding-bottom: 76px;
+    padding: 34px 0 76px;
+  }
+
+  .portal {
+    padding: 0 0 34px;
+  }
+
+  .portal-grid {
+    gap: 14px;
+  }
+
+  .portal-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .portal-icon {
+    width: 66px;
+    height: 66px;
+    margin-bottom: 18px;
+    border-radius: 22px;
+    font-size: 1.65rem;
+  }
+
+  .portal-card strong {
+    font-size: 2rem;
+  }
+
+  .portal-button {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 22px;
   }
 
   .game-grid {
@@ -1304,7 +1462,10 @@ h2 {
   .blob-yellow,
   .game-icon span,
   .game-icon::before,
-  .game-icon::after {
+  .game-icon::after,
+  .portal-card,
+  .portal-button {
     animation: none;
+    transition: none;
   }
 }
