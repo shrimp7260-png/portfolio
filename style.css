@@ -180,6 +180,7 @@ h1 {
   border-radius: 34px;
   background: var(--card);
   box-shadow: 0 18px 40px rgba(51, 39, 42, 0.06);
+  animation: screen-float 7s ease-in-out infinite;
 }
 
 .screen-bar,
@@ -272,7 +273,7 @@ h1 {
   top: 34px;
   width: 104px;
   height: 104px;
-  transform: rotate(-8deg);
+  animation: tile-left-float 5.8s ease-in-out infinite;
 }
 
 .tile-left::before {
@@ -296,7 +297,7 @@ h1 {
   bottom: 50px;
   width: 96px;
   height: 96px;
-  transform: rotate(7deg);
+  animation: tile-right-float 6.4s ease-in-out infinite;
 }
 
 .tile-right::before {
@@ -323,6 +324,7 @@ h1 {
   height: 74px;
   border: 12px solid var(--soft-tertiary);
   border-radius: 50%;
+  animation: ring-breathe 5.2s ease-in-out infinite;
 }
 
 .art-spark {
@@ -336,14 +338,14 @@ h1 {
 .spark-one {
   left: 52%;
   top: 18px;
-  transform: rotate(18deg);
+  animation: spark-one-drift 4.8s ease-in-out infinite;
 }
 
 .spark-two {
   left: 16%;
   bottom: 58px;
   background: var(--main);
-  transform: rotate(-18deg);
+  animation: spark-two-drift 5.6s ease-in-out infinite;
 }
 
 .art-blob {
@@ -359,7 +361,7 @@ h1 {
   width: 270px;
   height: 190px;
   background: var(--soft-tertiary);
-  transform: rotate(-20deg);
+  animation: blob-green-drift 8.4s ease-in-out infinite;
 }
 
 .blob-yellow {
@@ -368,7 +370,97 @@ h1 {
   width: 190px;
   height: 126px;
   background: var(--soft-accent);
-  transform: rotate(17deg);
+  animation: blob-yellow-drift 7.6s ease-in-out infinite;
+}
+
+@keyframes screen-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(0.7deg);
+  }
+}
+
+@keyframes tile-left-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(-4px, -12px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes tile-right-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(7deg);
+  }
+
+  50% {
+    transform: translate3d(5px, -9px, 0) rotate(3deg);
+  }
+}
+
+@keyframes ring-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.76;
+  }
+}
+
+@keyframes spark-one-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(18deg);
+  }
+
+  50% {
+    transform: translate3d(6px, -8px, 0) rotate(42deg);
+  }
+}
+
+@keyframes spark-two-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-18deg);
+  }
+
+  50% {
+    transform: translate3d(-5px, 7px, 0) rotate(-42deg);
+  }
+}
+
+@keyframes blob-green-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-20deg);
+  }
+
+  50% {
+    transform: translate3d(10px, -8px, 0) rotate(-15deg);
+  }
+}
+
+@keyframes blob-yellow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(17deg);
+  }
+
+  50% {
+    transform: translate3d(-8px, 6px, 0) rotate(12deg);
+  }
 }
 
 .games {
@@ -682,5 +774,24 @@ h2 {
   .play-button {
     width: 100%;
     min-height: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .art-screen,
+  .tile-left,
+  .tile-right,
+  .art-ring,
+  .spark-one,
+  .spark-two,
+  .blob-green,
+  .blob-yellow {
+    animation: none;
   }
 }
