@@ -143,43 +143,44 @@
   width: 48%;
 }
 
-.dark-preview {
-  background: radial-gradient(circle at 80% 20%, rgba(255, 139, 167, 0.28), transparent 120px), #181219;
+.mono-preview {
+  background: linear-gradient(145deg, #fffffe, #f2f2f0);
 }
 
-.dark-card {
+.mono-card {
   display: grid;
   gap: 5px;
   width: 54px;
   padding: 9px;
-  border: 1px solid rgba(255, 139, 167, 0.42);
-  border-radius: 12px;
-  background: rgba(255, 255, 254, 0.06);
+  border: 1px solid rgba(28, 28, 28, 0.26);
+  border-radius: 4px;
+  background: #fffffe;
 }
 
-.dark-card i {
-  width: 20px;
-  height: 20px;
-  border-radius: 8px;
-  background: #ff8ba7;
+.mono-card i {
+  width: 22px;
+  height: 1px;
+  margin-bottom: 5px;
+  background: #1f1f1f;
 }
 
-.dark-card span {
+.mono-card span {
   height: 4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 254, 0.7);
+  border-radius: 0;
+  background: rgba(31, 31, 31, 0.68);
 }
 
-.dark-card span:nth-of-type(2) {
+.mono-card span:nth-of-type(2) {
   width: 62%;
-  background: rgba(255, 198, 199, 0.8);
+  background: rgba(31, 31, 31, 0.28);
 }
 
-.dark-card em {
+.mono-card em {
   width: 32px;
-  height: 10px;
-  border-radius: 999px;
-  background: #ff8ba7;
+  height: 12px;
+  border: 1px solid rgba(31, 31, 31, 0.48);
+  border-radius: 2px;
+  background: transparent;
 }
 
 .template-body h2 {
