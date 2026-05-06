@@ -530,6 +530,18 @@ h1 {
   }
 }
 
+@keyframes cup-pour {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  38%,
+  58% {
+    transform: translateY(-2px) rotate(-7deg);
+  }
+}
+
 @keyframes steam-rise {
   0%,
   100% {
@@ -544,6 +556,71 @@ h1 {
   68% {
     opacity: 0;
     transform: translate3d(0, -8px, 0) scaleY(1.08);
+  }
+}
+
+@keyframes grill-heat {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(8px) scaleY(0.72);
+  }
+
+  36% {
+    opacity: 0.68;
+  }
+
+  72% {
+    opacity: 0;
+    transform: translateY(-9px) scaleY(1.08);
+  }
+}
+
+@keyframes grill-glow {
+  0%,
+  100% {
+    opacity: 0.32;
+    transform: scaleX(0.78);
+  }
+
+  45% {
+    opacity: 0.82;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes cafe-pour {
+  0%,
+  28%,
+  78%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-5px, -6px, 0) rotate(18deg) scaleY(0.2);
+  }
+
+  40%,
+  62% {
+    opacity: 0.82;
+    transform: translate3d(0, 0, 0) rotate(18deg) scaleY(1);
+  }
+}
+
+@keyframes cafe-drop {
+  0%,
+  36%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-8px, -8px, 0) scale(0.55);
+  }
+
+  52% {
+    opacity: 0.9;
+    transform: translate3d(0, 4px, 0) scale(1);
+  }
+
+  70% {
+    opacity: 0;
+    transform: translate3d(2px, 12px, 0) scale(0.75);
   }
 }
 
@@ -771,40 +848,54 @@ h2 {
   animation: grill-wiggle 3.1s ease-in-out infinite;
 }
 
-.game-card-grill .game-icon::before,
-.game-card-cafe .game-icon::before {
+.game-card-grill .game-icon::before {
   left: 25px;
-  top: 11px;
+  top: 10px;
   width: 8px;
-  height: 23px;
-  border-left: 3px solid rgba(89, 74, 78, 0.18);
+  height: 24px;
+  border-left: 3px solid rgba(170, 68, 40, 0.18);
   border-radius: 999px;
   opacity: 0;
-  animation: steam-rise 3s ease-in-out infinite;
+  box-shadow: 13px 3px 0 rgba(255, 139, 167, 0.18);
+  animation: grill-heat 2.8s ease-in-out infinite;
 }
 
-.game-card-grill .game-icon::after,
-.game-card-cafe .game-icon::after {
-  left: 39px;
-  top: 14px;
-  width: 8px;
-  height: 20px;
-  border-left: 3px solid rgba(89, 74, 78, 0.14);
+.game-card-grill .game-icon::after {
+  left: 18px;
+  bottom: 17px;
+  width: 42px;
+  height: 8px;
   border-radius: 999px;
-  opacity: 0;
-  animation: steam-rise 3s 0.45s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 139, 167, 0.5), var(--accent), transparent);
+  transform-origin: center;
+  animation: grill-glow 2.8s ease-in-out infinite;
 }
 
 .game-card-cafe .game-icon span {
-  animation: cup-sway 3.2s ease-in-out infinite;
+  animation: cup-pour 3.2s ease-in-out infinite;
 }
 
 .game-card-cafe .game-icon::before {
-  border-left-color: rgba(255, 139, 167, 0.22);
+  left: 20px;
+  top: 15px;
+  width: 4px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 139, 167, 0.5);
+  transform-origin: top center;
+  opacity: 0;
+  animation: cafe-pour 3.2s ease-in-out infinite;
 }
 
 .game-card-cafe .game-icon::after {
-  border-left-color: rgba(89, 74, 78, 0.13);
+  left: 27px;
+  top: 24px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 139, 167, 0.58);
+  opacity: 0;
+  animation: cafe-drop 3.2s 0.12s ease-in-out infinite;
 }
 
 .game-card-sort .game-icon span {
@@ -1139,6 +1230,31 @@ h2 {
     height: 46px;
     border-radius: 16px;
     font-size: 1.45rem;
+  }
+
+  .game-card-grill .game-icon::before {
+    left: 20px;
+    top: 8px;
+    height: 21px;
+  }
+
+  .game-card-grill .game-icon::after {
+    left: 15px;
+    bottom: 14px;
+    width: 36px;
+  }
+
+  .game-card-cafe .game-icon::before {
+    left: 17px;
+    top: 13px;
+    height: 24px;
+  }
+
+  .game-card-cafe .game-icon::after {
+    left: 24px;
+    top: 21px;
+    width: 7px;
+    height: 7px;
   }
 
   .game-card h3 {
