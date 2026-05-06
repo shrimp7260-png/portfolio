@@ -1579,6 +1579,9 @@ h2 {
 .portal-card {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  grid-template-rows: auto 1fr auto;
+  column-gap: 22px;
   min-height: 280px;
   overflow: hidden;
   padding: 28px;
@@ -1594,8 +1597,11 @@ h2 {
 }
 
 .portal-card-art {
-  position: absolute;
-  inset: auto 26px 26px auto;
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: end;
+  justify-self: end;
   width: 150px;
   height: 150px;
   border: 1px solid rgba(51, 39, 42, 0.1);
@@ -1662,6 +1668,7 @@ h2 {
 .portal-card-kicker {
   position: relative;
   z-index: 1;
+  grid-column: 1;
   color: var(--main);
   font-family: var(--font-rounded);
   font-size: 0.78rem;
@@ -1672,15 +1679,18 @@ h2 {
 .portal-card strong {
   position: relative;
   z-index: 1;
+  grid-column: 1;
   align-self: end;
   font-family: var(--font-rounded);
   font-size: 3.4rem;
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .portal-card small {
   position: relative;
   z-index: 1;
+  grid-column: 1;
   max-width: 19rem;
   color: var(--muted);
   font-size: 1rem;
@@ -1833,6 +1843,8 @@ h2 {
   }
 
   .portal-card {
+    grid-template-columns: minmax(0, 1fr) 132px;
+    column-gap: 16px;
     min-height: 238px;
     padding: 22px;
   }
@@ -1844,8 +1856,6 @@ h2 {
   .portal-card-art {
     width: 118px;
     height: 118px;
-    right: 18px;
-    bottom: 18px;
   }
 
   .hero-page-title {
