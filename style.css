@@ -592,6 +592,79 @@ h1 {
   }
 }
 
+@keyframes memory-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes memory-dots {
+  0%,
+  100% {
+    opacity: 0.36;
+    transform: translateY(2px);
+  }
+
+  42%,
+  66% {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes memory-line {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleX(0.72);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bento-lift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  48% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes bento-lid {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0);
+  }
+
+  48% {
+    opacity: 0.82;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bento-items {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  48% {
+    transform: translateY(-2px);
+  }
+}
+
 .games {
   padding: 16px 0 96px;
 }
@@ -758,6 +831,61 @@ h2 {
   border-right: 3px solid rgba(255, 139, 167, 0.38);
   transform: rotate(225deg);
   animation: sort-arrow-right 2.8s 0.25s ease-in-out infinite;
+}
+
+.game-card-memory .game-icon span {
+  animation: memory-pulse 3s ease-in-out infinite;
+}
+
+.game-card-memory .game-icon::before {
+  left: 17px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--main);
+  box-shadow:
+    17px -6px 0 rgba(255, 139, 167, 0.38),
+    34px 2px 0 rgba(195, 240, 202, 0.9);
+  animation: memory-dots 3s ease-in-out infinite;
+}
+
+.game-card-memory .game-icon::after {
+  left: 20px;
+  bottom: 15px;
+  width: 38px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(89, 74, 78, 0.12);
+  animation: memory-line 3s ease-in-out infinite;
+}
+
+.game-card-bento .game-icon span {
+  animation: bento-lift 3.2s ease-in-out infinite;
+}
+
+.game-card-bento .game-icon::before {
+  left: 17px;
+  top: 15px;
+  width: 42px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 139, 167, 0.35);
+  animation: bento-lid 3.2s ease-in-out infinite;
+}
+
+.game-card-bento .game-icon::after {
+  left: 18px;
+  bottom: 17px;
+  width: 40px;
+  height: 10px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 20% 50%, var(--main) 0 4px, transparent 5px),
+    radial-gradient(circle at 50% 50%, var(--tertiary) 0 4px, transparent 5px),
+    radial-gradient(circle at 80% 50%, var(--accent) 0 4px, transparent 5px);
+  opacity: 0.72;
+  animation: bento-items 3.2s ease-in-out infinite;
 }
 
 .game-card h3 {
