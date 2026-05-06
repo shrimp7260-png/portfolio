@@ -463,6 +463,135 @@ h1 {
   }
 }
 
+@keyframes icon-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes cashier-lines {
+  0%,
+  62%,
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  18%,
+  42% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cashier-dot {
+  0%,
+  55%,
+  100% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+
+  18%,
+  28% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@keyframes grill-wiggle {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  32% {
+    transform: translateY(-2px) rotate(-4deg);
+  }
+
+  64% {
+    transform: translateY(1px) rotate(3deg);
+  }
+}
+
+@keyframes cup-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+}
+
+@keyframes steam-rise {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scaleY(0.78);
+  }
+
+  28% {
+    opacity: 0.62;
+  }
+
+  68% {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0) scaleY(1.08);
+  }
+}
+
+@keyframes sort-slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-4px);
+  }
+
+  70% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes sort-arrow-left {
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: translateX(6px) rotate(45deg);
+  }
+
+  24%,
+  48% {
+    opacity: 1;
+    transform: translateX(0) rotate(45deg);
+  }
+}
+
+@keyframes sort-arrow-right {
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: translateX(-6px) rotate(225deg);
+  }
+
+  24%,
+  48% {
+    opacity: 1;
+    transform: translateX(0) rotate(225deg);
+  }
+}
+
 .games {
   padding: 16px 0 96px;
 }
@@ -503,8 +632,10 @@ h2 {
 }
 
 .game-icon {
+  position: relative;
   display: grid;
   place-items: center;
+  overflow: hidden;
   width: 78px;
   height: 78px;
   margin-bottom: 24px;
@@ -516,6 +647,8 @@ h2 {
 }
 
 .game-icon span {
+  position: relative;
+  z-index: 2;
   display: grid;
   place-items: center;
   width: 52px;
@@ -525,6 +658,106 @@ h2 {
   font-size: 1.8rem;
   line-height: 1;
   filter: saturate(0.82);
+}
+
+.game-icon::before,
+.game-icon::after {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.game-card-cashier .game-icon span {
+  animation: icon-bob 2.5s ease-in-out infinite;
+}
+
+.game-card-cashier .game-icon::before {
+  right: 11px;
+  top: 17px;
+  width: 22px;
+  height: 16px;
+  border-top: 3px solid rgba(51, 39, 42, 0.18);
+  border-bottom: 3px solid rgba(51, 39, 42, 0.12);
+  border-radius: 4px;
+  animation: cashier-lines 2.5s ease-in-out infinite;
+}
+
+.game-card-cashier .game-icon::after {
+  right: 17px;
+  bottom: 17px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--main);
+  opacity: 0;
+  animation: cashier-dot 2.5s ease-in-out infinite;
+}
+
+.game-card-grill .game-icon span {
+  animation: grill-wiggle 3.1s ease-in-out infinite;
+}
+
+.game-card-grill .game-icon::before,
+.game-card-cafe .game-icon::before {
+  left: 25px;
+  top: 11px;
+  width: 8px;
+  height: 23px;
+  border-left: 3px solid rgba(89, 74, 78, 0.18);
+  border-radius: 999px;
+  opacity: 0;
+  animation: steam-rise 3s ease-in-out infinite;
+}
+
+.game-card-grill .game-icon::after,
+.game-card-cafe .game-icon::after {
+  left: 39px;
+  top: 14px;
+  width: 8px;
+  height: 20px;
+  border-left: 3px solid rgba(89, 74, 78, 0.14);
+  border-radius: 999px;
+  opacity: 0;
+  animation: steam-rise 3s 0.45s ease-in-out infinite;
+}
+
+.game-card-cafe .game-icon span {
+  animation: cup-sway 3.2s ease-in-out infinite;
+}
+
+.game-card-cafe .game-icon::before {
+  border-left-color: rgba(255, 139, 167, 0.22);
+}
+
+.game-card-cafe .game-icon::after {
+  border-left-color: rgba(89, 74, 78, 0.13);
+}
+
+.game-card-sort .game-icon span {
+  animation: sort-slide 2.8s ease-in-out infinite;
+}
+
+.game-card-sort .game-icon::before {
+  left: 10px;
+  top: 19px;
+  width: 18px;
+  height: 8px;
+  border-top: 3px solid rgba(51, 39, 42, 0.14);
+  border-right: 3px solid rgba(51, 39, 42, 0.14);
+  transform: rotate(45deg);
+  animation: sort-arrow-left 2.8s ease-in-out infinite;
+}
+
+.game-card-sort .game-icon::after {
+  right: 10px;
+  bottom: 19px;
+  width: 18px;
+  height: 8px;
+  border-top: 3px solid rgba(255, 139, 167, 0.38);
+  border-right: 3px solid rgba(255, 139, 167, 0.38);
+  transform: rotate(225deg);
+  animation: sort-arrow-right 2.8s 0.25s ease-in-out infinite;
 }
 
 .game-card h3 {
@@ -816,7 +1049,10 @@ h2 {
   .spark-one,
   .spark-two,
   .blob-green,
-  .blob-yellow {
+  .blob-yellow,
+  .game-icon span,
+  .game-icon::before,
+  .game-icon::after {
     animation: none;
   }
 }
