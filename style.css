@@ -754,26 +754,51 @@ h2 {
   }
 
   .game-grid {
-    gap: 22px;
+    gap: 14px;
   }
 
   .game-card {
-    padding: 26px;
+    display: grid;
+    grid-template-columns: 66px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 16px;
+    padding: 18px;
   }
 
   .game-icon {
-    width: 74px;
-    height: 74px;
-    margin-bottom: 22px;
+    grid-row: 1 / 4;
+    width: 66px;
+    height: 66px;
+    margin-bottom: 0;
+    border-radius: 22px;
   }
 
   .game-icon span {
-    font-size: 1.65rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    font-size: 1.45rem;
+  }
+
+  .game-card h3 {
+    grid-column: 2;
+    margin-bottom: 5px;
+    font-size: 1.08rem;
+  }
+
+  .game-card p {
+    grid-column: 2;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+    line-height: 1.58;
   }
 
   .play-button {
+    grid-column: 2;
     width: 100%;
-    min-height: 54px;
+    min-height: 48px;
+    margin-top: 0;
+    padding: 0 20px;
   }
 }
 
