@@ -204,23 +204,24 @@
 }
 
 .template-actions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  align-items: center;
   gap: 7px;
   margin-top: auto;
 }
 
 .template-actions button {
+  flex: 1 1 0;
   min-width: 0;
   min-height: 44px;
-  padding: 0 8px;
+  padding: 0 6px;
   border: 0;
   border-radius: 10px;
   background: var(--main);
   color: var(--text);
   font: inherit;
   font-family: "Nunito", "Zen Maru Gothic", sans-serif;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
@@ -371,7 +372,6 @@
 
   .template-actions {
     grid-column: 2;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     margin-top: 0;
   }
