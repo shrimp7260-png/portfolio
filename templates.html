@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="コピペで使える個人サイト向けHTML/CSSテンプレート集。">
-  <title>Templates | Mellow Games</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="TinyPortalの個人サイト向けHTML/CSSテンプレート集。">
+  <title>Templates | TinyPortal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="templates.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Mellow Games">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>Mellow Games</span>
+<body class="portal-site">
+  <header class="site-header portal-header">
+    <a class="brand portal-brand" href="index.html" aria-label="TinyPortal">
+      <span class="brand-mark portal-brand-mark" aria-hidden="true"></span>
+      <span>TinyPortal</span>
     </a>
-    <nav class="site-nav" aria-label="サイト内ナビゲーション">
-      <a href="index.html#games">Games</a>
+    <nav class="site-nav portal-nav" aria-label="サイト内ナビゲーション">
+      <a href="games.html">Games</a>
       <a href="templates.html" aria-current="page">Templates</a>
     </nav>
   </header>
 
-  <main class="templates-page">
-    <section class="templates-hero" aria-labelledby="templates-title">
-      <p class="section-label">html/css templates</p>
+  <main class="templates-page portal-page">
+    <section class="templates-hero hero-page-title" aria-labelledby="templates-title">
+      <p class="section-label">tiny site blueprints</p>
       <h1 id="templates-title">Templates</h1>
-      <p class="lead">コピペで使える、個人サイト向けの小さなテンプレート集。</p>
+      <p class="lead">探索の地図みたいに使える、個人サイト向けの小さなテンプレート集。</p>
     </section>
 
     <section class="template-list" aria-label="テンプレート一覧">
-      <article class="template-card">
+      <article class="template-card ui-card">
         <div class="template-preview simple-preview" aria-hidden="true">
           <div class="preview-avatar"></div>
           <span></span>
@@ -49,7 +46,7 @@
         </div>
       </article>
 
-      <article class="template-card">
+      <article class="template-card ui-card">
         <div class="template-preview retro-preview" aria-hidden="true">
           <div class="retro-window">
             <b>START</b>
@@ -69,7 +66,7 @@
         </div>
       </article>
 
-      <article class="template-card">
+      <article class="template-card ui-card">
         <div class="template-preview dark-preview" aria-hidden="true">
           <div class="dark-card">
             <i></i>
@@ -90,7 +87,7 @@
       </article>
     </section>
 
-    <section class="code-panel" id="codePanel" aria-live="polite">
+    <section class="code-panel ui-card" id="codePanel" aria-live="polite">
       <div class="code-panel-head">
         <div>
           <p class="section-label">selected code</p>
@@ -101,7 +98,7 @@
       <pre><code id="templateCode">カードの「コードを見る」を押すと、ここにHTML/CSSコードが表示されます。</code></pre>
     </section>
 
-    <section class="live-preview-panel" id="previewPanel" aria-live="polite">
+    <section class="live-preview-panel ui-card" id="previewPanel" aria-live="polite">
       <div class="code-panel-head">
         <div>
           <p class="section-label">live preview</p>
@@ -112,8 +109,8 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Mellow Games</p>
+  <footer class="site-footer portal-footer">
+    <p>© 2026 TinyPortal</p>
   </footer>
 
   <script src="templates.js"></script>

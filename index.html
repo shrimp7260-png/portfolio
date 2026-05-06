@@ -3,132 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="やさしく遊べる小さなゲームたち。">
-  <title>Mellow Games</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="小さなゲームとテンプレートを探索するポータルサイト。">
+  <title>TinyPortal</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#" aria-label="Mellow Games">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>Mellow Games</span>
+<body class="portal-site">
+  <header class="site-header portal-header">
+    <a class="brand portal-brand" href="index.html" aria-label="TinyPortal">
+      <span class="brand-mark portal-brand-mark" aria-hidden="true"></span>
+      <span>TinyPortal</span>
     </a>
-    <nav class="site-nav" aria-label="サイト内ナビゲーション">
-      <a href="#games">Games</a>
+    <nav class="site-nav portal-nav" aria-label="サイト内ナビゲーション">
+      <a href="games.html">Games</a>
       <a href="templates.html">Templates</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="site-title">
-      <div class="hero-text">
-        <p class="section-label">mellow web portal</p>
-        <h1 id="site-title">Mellow Games</h1>
-        <p class="lead">やさしく遊べるゲームと、コピペで使えるHTML/CSSテンプレート。</p>
-      </div>
-
-      <div class="hero-art" aria-label="フラットでやわらかいゲーム作品集のビジュアル">
-        <div class="art-screen">
-          <span class="screen-bar"></span>
-          <span class="screen-pill"></span>
-          <span class="screen-dot dot-one"></span>
-          <span class="screen-dot dot-two"></span>
-          <span class="screen-dot dot-three"></span>
-          <span class="screen-line line-one"></span>
-          <span class="screen-line line-two"></span>
+    <section class="portal-hero" aria-labelledby="site-title">
+      <div class="world-art" aria-label="階段とアーチが浮かぶインディーゲーム風のキービジュアル">
+        <span class="world-sun"></span>
+        <span class="world-arch world-arch-left"></span>
+        <span class="world-arch world-arch-right"></span>
+        <span class="world-column world-column-left"></span>
+        <span class="world-column world-column-right"></span>
+        <span class="world-stair world-stair-one"></span>
+        <span class="world-stair world-stair-two"></span>
+        <span class="world-stair world-stair-three"></span>
+        <span class="world-object world-object-pink"></span>
+        <span class="world-object world-object-green"></span>
+        <span class="world-door"></span>
+        <div class="portal-hero-copy">
+          <p class="section-label">tiny indie gateway</p>
+          <h1 id="site-title">TinyPortal</h1>
         </div>
-        <span class="art-tile tile-left"></span>
-        <span class="art-tile tile-right"></span>
-        <span class="art-ring"></span>
-        <span class="art-spark spark-one"></span>
-        <span class="art-spark spark-two"></span>
-        <span class="art-blob blob-green"></span>
-        <span class="art-blob blob-yellow"></span>
       </div>
     </section>
 
-    <section class="portal" aria-labelledby="portal-title">
-      <div class="section-heading">
-        <p class="section-label">choose a room</p>
-        <h2 id="portal-title">入り口を選ぶ</h2>
-      </div>
+    <section class="portal-gateway" aria-label="ポータルメニュー">
+      <a class="portal-card ui-card" href="games.html">
+        <span class="portal-card-art portal-card-games" aria-hidden="true"></span>
+        <span class="portal-card-kicker">play room</span>
+        <strong>Games</strong>
+        <small>小さく遊べるゲームの入口。</small>
+      </a>
 
-      <div class="portal-grid">
-        <a class="portal-card portal-card-games" href="#games">
-          <span class="portal-icon" aria-hidden="true">🎮</span>
-          <span class="portal-kicker">playful collection</span>
-          <strong>Games</strong>
-          <span class="portal-copy">小さく遊べるゲーム作品をまとめています。</span>
-          <span class="portal-button">ゲームを見る</span>
-        </a>
-
-        <a class="portal-card portal-card-templates" href="templates.html">
-          <span class="portal-icon" aria-hidden="true">⌘</span>
-          <span class="portal-kicker">copy and customize</span>
-          <strong>Templates</strong>
-          <span class="portal-copy">個人サイト向けのHTML/CSSテンプレート集です。</span>
-          <span class="portal-button">テンプレートを見る</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="games" id="games" aria-labelledby="games-title">
-      <div class="section-heading">
-        <p class="section-label">games</p>
-        <h2 id="games-title">ゲーム一覧</h2>
-      </div>
-
-      <div class="game-grid">
-        <article class="game-card game-card-cashier">
-          <div class="game-icon" aria-label="レシートのアイコン"><span>🧾</span></div>
-          <h3>レジ打ちマスター</h3>
-          <p>流れてくる商品の値段を素早く入力するカジュアルゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/cashier_game/">Play</a>
-        </article>
-
-        <article class="game-card game-card-grill">
-          <div class="game-icon" aria-label="焼き加減のアイコン"><span>🍖</span></div>
-          <h3>グリルマスター</h3>
-          <p>ちょうどいい焼き加減で止めるタイミングゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/grill_game/">Play</a>
-        </article>
-
-        <article class="game-card game-card-cafe">
-          <div class="game-icon" aria-label="カフェのアイコン"><span>☕</span></div>
-          <h3>カフェマスター</h3>
-          <p>ボタン操作でドリンクを作るシンプル操作ゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/cafe_button/">Play</a>
-        </article>
-
-        <article class="game-card game-card-sort">
-          <div class="game-icon" aria-label="品出しのアイコン"><span>📦</span></div>
-          <h3>品出しマスター</h3>
-          <p>商品をすばやく仕分けて並べる、テンポよく遊べる整理ゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/sort_game/">Play</a>
-        </article>
-
-        <article class="game-card game-card-memory">
-          <div class="game-icon" aria-label="記憶ゲームのアイコン"><span>🧠</span></div>
-          <h3>注文メモリー</h3>
-          <p>消える注文を覚えて、正しい順番で選ぶ記憶力ゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/memory_game/">Play</a>
-        </article>
-
-        <article class="game-card game-card-bento">
-          <div class="game-icon" aria-label="お弁当のアイコン"><span>🍱</span></div>
-          <h3>お弁当つめマスター</h3>
-          <p>注文どおりにおかずを選んで、お弁当を完成させるゲーム。</p>
-          <a class="play-button" href="https://shrimp7260-png.github.io/bento_game/">Play</a>
-        </article>
-      </div>
+      <a class="portal-card ui-card" href="templates.html">
+        <span class="portal-card-art portal-card-templates" aria-hidden="true"></span>
+        <span class="portal-card-kicker">tool shelf</span>
+        <strong>Templates</strong>
+        <small>個人サイト向けテンプレート集。</small>
+      </a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Mellow Games</p>
+  <footer class="site-footer portal-footer">
+    <p>© 2026 TinyPortal</p>
   </footer>
 </body>
 </html>

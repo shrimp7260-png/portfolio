@@ -48,7 +48,6 @@ a {
 
 .site-header,
 .hero,
-.portal,
 .games,
 .site-footer {
   width: min(1080px, calc(100% - 44px));
@@ -132,8 +131,8 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(310px, 0.82fr);
   align-items: center;
   gap: clamp(42px, 8vw, 92px);
-  min-height: min(620px, calc(100vh - 96px));
-  padding: 34px 0 66px;
+  min-height: calc(100vh - 96px);
+  padding: 34px 0 82px;
 }
 
 .hero-text {
@@ -752,7 +751,7 @@ h1 {
 }
 
 .games {
-  padding: 52px 0 96px;
+  padding: 16px 0 96px;
 }
 
 .section-heading {
@@ -788,126 +787,6 @@ h2 {
   border-color: rgba(255, 139, 167, 0.34);
   box-shadow: 0 18px 38px rgba(51, 39, 42, 0.075);
   transform: translateY(-4px);
-}
-
-.portal {
-  padding: 8px 0 48px;
-}
-
-.portal-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-}
-
-.portal-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 310px;
-  overflow: hidden;
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--card);
-  box-shadow: var(--card-shadow);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.portal-card:hover {
-  border-color: rgba(255, 139, 167, 0.34);
-  box-shadow: 0 18px 38px rgba(51, 39, 42, 0.075);
-  transform: translateY(-4px);
-}
-
-.portal-card::before {
-  position: absolute;
-  inset: auto -42px -56px auto;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: var(--soft-accent);
-  content: "";
-}
-
-.portal-card-templates::before {
-  background: var(--soft-tertiary);
-}
-
-.portal-icon {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 78px;
-  height: 78px;
-  margin-bottom: 24px;
-  border: 1px solid rgba(51, 39, 42, 0.08);
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(255, 198, 199, 0.58), rgba(195, 240, 202, 0.5)),
-    var(--card);
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.portal-kicker {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 8px;
-  color: var(--main);
-  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.portal-card strong {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 12px;
-  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1.08;
-}
-
-.portal-copy {
-  position: relative;
-  z-index: 1;
-  max-width: 23rem;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.portal-button {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  min-width: 150px;
-  min-height: 52px;
-  margin-top: auto;
-  padding: 0 26px;
-  border-radius: 999px;
-  background: var(--main);
-  color: var(--text);
-  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
-}
-
-.portal-card-templates .portal-button {
-  background: var(--tertiary);
-}
-
-.portal-card:hover .portal-button {
-  box-shadow: 0 10px 20px rgba(255, 139, 167, 0.22);
-  transform: translateY(-2px);
 }
 
 .game-icon {
@@ -1153,7 +1032,6 @@ h2 {
 
 .brand:focus-visible,
 .site-nav a:focus-visible,
-.portal-card:focus-visible,
 .play-button:focus-visible {
   outline: 3px solid rgba(195, 240, 202, 0.82);
   outline-offset: 4px;
@@ -1192,10 +1070,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .portal-grid {
-    grid-template-columns: 1fr;
-  }
-
   .game-card {
     min-height: auto;
   }
@@ -1204,7 +1078,6 @@ h2 {
 @media (max-width: 560px) {
   .site-header,
   .hero,
-  .portal,
   .games,
   .site-footer {
     width: min(100% - 30px, 1080px);
@@ -1230,7 +1103,7 @@ h2 {
   }
 
   .hero {
-    padding: 24px 0 44px;
+    padding: 24px 0 58px;
   }
 
   .hero-art {
@@ -1337,38 +1210,7 @@ h2 {
   }
 
   .games {
-    padding: 34px 0 76px;
-  }
-
-  .portal {
-    padding: 0 0 34px;
-  }
-
-  .portal-grid {
-    gap: 14px;
-  }
-
-  .portal-card {
-    min-height: auto;
-    padding: 20px;
-  }
-
-  .portal-icon {
-    width: 66px;
-    height: 66px;
-    margin-bottom: 18px;
-    border-radius: 22px;
-    font-size: 1.65rem;
-  }
-
-  .portal-card strong {
-    font-size: 2rem;
-  }
-
-  .portal-button {
-    width: 100%;
-    min-height: 48px;
-    margin-top: 22px;
+    padding-bottom: 76px;
   }
 
   .game-grid {
@@ -1462,9 +1304,560 @@ h2 {
   .blob-yellow,
   .game-icon span,
   .game-icon::before,
-  .game-icon::after,
+  .game-icon::after {
+    animation: none;
+  }
+}
+
+/* TinyPortal world layer */
+.portal-site {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 254, 0.42), rgba(250, 238, 231, 0) 280px),
+    var(--bg);
+}
+
+.portal-site::before {
+  background:
+    linear-gradient(90deg, rgba(255, 198, 199, 0.18) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(51, 39, 42, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.portal-header {
+  position: relative;
+  z-index: 4;
+}
+
+.portal-brand {
+  color: var(--text);
+}
+
+.portal-brand-mark {
+  border-color: rgba(51, 39, 42, 0.18);
+  border-radius: 10px 10px 18px 18px;
+  box-shadow: inset 0 -8px 0 rgba(255, 198, 199, 0.38);
+}
+
+.portal-brand-mark::before {
+  width: 14px;
+  height: 18px;
+  left: 9px;
+  top: 13px;
+  border-radius: 999px 999px 4px 4px;
+  background: var(--main);
+}
+
+.portal-brand-mark::after {
+  width: 8px;
+  height: 8px;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 3px;
+  background: var(--tertiary);
+}
+
+.portal-nav a {
+  border-color: rgba(51, 39, 42, 0.12);
+  background: rgba(255, 255, 254, 0.68);
+  box-shadow: 0 8px 18px rgba(51, 39, 42, 0.045);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.portal-nav a:hover,
+.portal-nav a[aria-current="page"] {
+  border-color: rgba(255, 139, 167, 0.42);
+  background: rgba(255, 198, 199, 0.42);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.portal-hero {
+  width: 100%;
+  padding: 16px 0 38px;
+}
+
+.world-art {
+  position: relative;
+  display: grid;
+  place-items: end start;
+  width: min(100% - 44px, 1240px);
+  min-height: clamp(430px, 66vw, 680px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(51, 39, 42, 0.12);
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 254, 0.86), rgba(255, 198, 199, 0.34) 58%, rgba(195, 240, 202, 0.34)),
+    var(--bg);
+  box-shadow: 0 24px 70px rgba(51, 39, 42, 0.08);
+}
+
+.world-art::before,
+.world-art::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.world-art::before {
+  inset: 9%;
+  border: 1px solid rgba(51, 39, 42, 0.08);
+  border-radius: 999px 999px 24px 24px;
+}
+
+.world-art::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background:
+    linear-gradient(135deg, transparent 0 28px, rgba(51, 39, 42, 0.08) 29px 31px, transparent 32px),
+    linear-gradient(180deg, rgba(255, 255, 254, 0.5), rgba(255, 255, 254, 0.74));
+  background-size: 72px 72px, auto;
+}
+
+.portal-hero-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 680px;
+  padding: clamp(26px, 5vw, 58px);
+}
+
+.portal-hero-copy h1 {
+  margin-bottom: 0;
+  color: var(--text);
+  font-size: 5.8rem;
+  text-shadow: 0 2px 0 rgba(255, 255, 254, 0.72);
+}
+
+.world-sun,
+.world-arch,
+.world-column,
+.world-stair,
+.world-object,
+.world-door {
+  position: absolute;
+  display: block;
+}
+
+.world-sun {
+  right: 13%;
+  top: 12%;
+  width: clamp(72px, 12vw, 148px);
+  height: clamp(72px, 12vw, 148px);
+  border: 1px solid rgba(51, 39, 42, 0.1);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: inset -18px -20px 0 rgba(255, 139, 167, 0.28);
+}
+
+.world-arch {
+  z-index: 1;
+  width: clamp(120px, 19vw, 220px);
+  height: clamp(170px, 27vw, 310px);
+  border: clamp(14px, 2.4vw, 28px) solid rgba(255, 255, 254, 0.84);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+  box-shadow: 0 16px 28px rgba(51, 39, 42, 0.055);
+}
+
+.world-arch-left {
+  left: 11%;
+  top: 19%;
+}
+
+.world-arch-right {
+  right: 22%;
+  bottom: 18%;
+  transform: scale(0.74);
+}
+
+.world-column {
+  z-index: 2;
+  width: clamp(40px, 6vw, 70px);
+  height: clamp(170px, 26vw, 290px);
+  bottom: 20%;
+  border: 1px solid rgba(51, 39, 42, 0.09);
+  border-radius: 20px 20px 8px 8px;
+  background:
+    linear-gradient(90deg, rgba(51, 39, 42, 0.06) 1px, transparent 1px),
+    var(--card);
+  background-size: 18px auto;
+}
+
+.world-column-left {
+  left: 27%;
+}
+
+.world-column-right {
+  right: 9%;
+  height: clamp(130px, 20vw, 230px);
+  background-color: var(--tertiary);
+}
+
+.world-stair {
+  z-index: 2;
+  height: clamp(30px, 4.8vw, 56px);
+  border: 1px solid rgba(51, 39, 42, 0.1);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: 0 10px 0 rgba(255, 198, 199, 0.55);
+}
+
+.world-stair-one {
+  right: 31%;
+  bottom: 24%;
+  width: clamp(138px, 26vw, 320px);
+}
+
+.world-stair-two {
+  right: 24%;
+  bottom: 16%;
+  width: clamp(176px, 34vw, 430px);
+}
+
+.world-stair-three {
+  right: 17%;
+  bottom: 8%;
+  width: clamp(210px, 43vw, 540px);
+}
+
+.world-object {
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(51, 39, 42, 0.12);
+  border-radius: 8px;
+  animation: portal-drift 6.5s ease-in-out infinite;
+}
+
+.world-object-pink {
+  left: 43%;
+  top: 18%;
+  background: var(--main);
+  transform: rotate(12deg);
+}
+
+.world-object-green {
+  right: 35%;
+  top: 34%;
+  background: var(--tertiary);
+  animation-delay: -2s;
+  transform: rotate(45deg);
+}
+
+.world-door {
+  z-index: 3;
+  left: 50%;
+  bottom: 24%;
+  width: clamp(48px, 7vw, 82px);
+  height: clamp(82px, 12vw, 142px);
+  border: 2px solid rgba(51, 39, 42, 0.18);
+  border-radius: 999px 999px 8px 8px;
+  background: var(--text);
+  box-shadow: 0 0 0 12px rgba(255, 139, 167, 0.18);
+}
+
+.portal-gateway {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: min(1080px, calc(100% - 44px));
+  margin: 0 auto;
+  padding: 28px 0 94px;
+}
+
+.ui-card {
+  border-color: rgba(51, 39, 42, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 254, 0.82);
+  box-shadow: 0 16px 38px rgba(51, 39, 42, 0.065);
+}
+
+.portal-card {
+  position: relative;
+  display: grid;
+  min-height: 280px;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid rgba(51, 39, 42, 0.12);
+  color: var(--text);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.portal-card:hover {
+  border-color: rgba(255, 139, 167, 0.4);
+  box-shadow: 0 24px 48px rgba(51, 39, 42, 0.09);
+  transform: translateY(-6px);
+}
+
+.portal-card-art {
+  position: absolute;
+  inset: auto 26px 26px auto;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(51, 39, 42, 0.1);
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, rgba(51, 39, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(51, 39, 42, 0.08) 1px, transparent 1px),
+    var(--accent);
+  background-size: 30px 30px;
+}
+
+.portal-card-art::before,
+.portal-card-art::after {
+  position: absolute;
+  content: "";
+}
+
+.portal-card-games::before {
+  left: 28px;
+  bottom: 25px;
+  width: 88px;
+  height: 72px;
+  border-radius: 999px 999px 8px 8px;
+  background: var(--card);
+}
+
+.portal-card-games::after {
+  right: 28px;
+  top: 26px;
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: var(--tertiary);
+  transform: rotate(18deg);
+}
+
+.portal-card-templates {
+  background:
+    linear-gradient(135deg, transparent 0 23px, rgba(51, 39, 42, 0.09) 24px 26px, transparent 27px),
+    var(--tertiary);
+  background-size: 42px 42px;
+}
+
+.portal-card-templates::before {
+  left: 26px;
+  top: 34px;
+  width: 96px;
+  height: 76px;
+  border: 10px solid var(--card);
+  border-bottom: 0;
+  border-radius: 999px 999px 0 0;
+}
+
+.portal-card-templates::after {
+  left: 38px;
+  bottom: 30px;
+  width: 84px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--main);
+  box-shadow: 0 -28px 0 var(--accent);
+}
+
+.portal-card-kicker {
+  position: relative;
+  z-index: 1;
+  color: var(--main);
+  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portal-card strong {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: 3.4rem;
+  line-height: 1;
+}
+
+.portal-card small {
+  position: relative;
+  z-index: 1;
+  max-width: 19rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.portal-page {
+  width: min(1080px, calc(100% - 44px));
+  margin: 0 auto;
+}
+
+.hero-page-title {
+  position: relative;
+  max-width: 760px;
+  padding: 52px 0 42px;
+}
+
+.hero-page-title h1 {
+  font-size: 4.4rem;
+}
+
+.hero-page-title::after {
+  display: block;
+  width: 132px;
+  height: 18px;
+  margin-top: 26px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, var(--main) 0 34%, var(--accent) 34% 68%, var(--tertiary) 68%);
+  content: "";
+}
+
+.portal-games {
+  width: 100%;
+  padding-top: 8px;
+}
+
+.game-card.ui-card,
+.template-card.ui-card {
+  border-radius: 16px;
+}
+
+.game-card.ui-card:hover,
+.template-card.ui-card:hover {
+  transform: translateY(-6px);
+}
+
+.ui-button,
+.template-actions button {
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(255, 139, 167, 0.2);
+}
+
+.ui-button-muted {
+  cursor: default;
+  opacity: 0.64;
+}
+
+.ui-button-muted:hover {
+  background: var(--main);
+  box-shadow: 0 10px 20px rgba(255, 139, 167, 0.2);
+  transform: none;
+}
+
+.template-preview,
+.code-panel pre,
+.live-preview-panel iframe {
+  border-radius: 12px;
+}
+
+@keyframes portal-drift {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@media (max-width: 880px) {
+  .portal-gateway {
+    grid-template-columns: 1fr;
+  }
+
+  .world-column-left {
+    left: 18%;
+  }
+
+  .world-arch-right {
+    right: 10%;
+  }
+}
+
+@media (max-width: 560px) {
+  .portal-header,
+  .portal-page,
+  .portal-gateway,
+  .portal-footer {
+    width: min(100% - 30px, 1080px);
+  }
+
+  .portal-hero {
+    padding-top: 4px;
+  }
+
+  .world-art {
+    width: min(100% - 30px, 1080px);
+    min-height: 470px;
+    border-radius: 18px;
+  }
+
+  .portal-hero-copy {
+    padding: 22px;
+  }
+
+  .portal-hero-copy h1,
+  .hero-page-title h1 {
+    font-size: 3.1rem;
+  }
+
+  .world-column-left,
+  .world-arch-left {
+    left: 8%;
+  }
+
+  .world-column-right {
+    right: 6%;
+  }
+
+  .world-door {
+    left: 46%;
+  }
+
+  .world-stair-one {
+    right: 18%;
+  }
+
+  .world-stair-two {
+    right: 10%;
+  }
+
+  .world-stair-three {
+    right: 4%;
+  }
+
+  .portal-gateway {
+    padding-bottom: 72px;
+  }
+
+  .portal-card {
+    min-height: 238px;
+    padding: 22px;
+  }
+
+  .portal-card strong {
+    font-size: 2.5rem;
+  }
+
+  .portal-card-art {
+    width: 118px;
+    height: 118px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .hero-page-title {
+    padding: 34px 0 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-nav a,
   .portal-card,
-  .portal-button {
+  .world-object,
+  .game-card.ui-card,
+  .template-card.ui-card {
     animation: none;
     transition: none;
   }
