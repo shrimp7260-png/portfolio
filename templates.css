@@ -33,14 +33,15 @@
 
 .template-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
 }
 
 .template-card {
-  display: grid;
-  gap: 22px;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 348px;
+  padding: 30px;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--card);
@@ -57,10 +58,13 @@
 .template-preview {
   display: grid;
   place-items: center;
-  min-height: 190px;
+  width: 78px;
+  height: 78px;
+  min-height: 78px;
+  margin-bottom: 24px;
   overflow: hidden;
   border: 1px solid rgba(51, 39, 42, 0.1);
-  border-radius: 18px;
+  border-radius: 28px;
 }
 
 .simple-preview {
@@ -68,34 +72,34 @@
 }
 
 .preview-avatar {
-  width: 58px;
-  height: 58px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: var(--main);
-  box-shadow: 0 0 0 10px rgba(255, 139, 167, 0.16);
+  box-shadow: 0 0 0 7px rgba(255, 139, 167, 0.16);
 }
 
 .simple-preview span {
   display: block;
-  width: 54%;
-  height: 10px;
+  width: 46px;
+  height: 5px;
   border-radius: 999px;
   background: rgba(89, 74, 78, 0.16);
 }
 
 .simple-preview span:nth-of-type(2) {
-  width: 36%;
+  width: 34px;
   background: var(--soft-tertiary);
 }
 
 .preview-links {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
 .preview-links i {
-  width: 40px;
-  height: 16px;
+  width: 14px;
+  height: 6px;
   border-radius: 999px;
   background: var(--accent);
 }
@@ -110,22 +114,22 @@
 
 .retro-window {
   display: grid;
-  gap: 12px;
-  width: 78%;
-  padding: 20px;
-  border: 3px solid #ff8ba7;
-  border-radius: 6px;
+  gap: 5px;
+  width: 56px;
+  padding: 8px;
+  border: 2px solid #ff8ba7;
+  border-radius: 5px;
   color: #fffffe;
-  box-shadow: 0 0 0 5px rgba(255, 139, 167, 0.16);
+  box-shadow: 0 0 0 3px rgba(255, 139, 167, 0.16);
 }
 
 .retro-window b {
   font-family: "Nunito", sans-serif;
-  font-size: 1.45rem;
+  font-size: 0.7rem;
 }
 
 .retro-window span {
-  height: 10px;
+  height: 4px;
   border-radius: 2px;
   background: #c3f0ca;
 }
@@ -145,23 +149,23 @@
 
 .dark-card {
   display: grid;
-  gap: 12px;
-  width: 70%;
-  padding: 22px;
+  gap: 5px;
+  width: 54px;
+  padding: 9px;
   border: 1px solid rgba(255, 139, 167, 0.42);
-  border-radius: 18px;
+  border-radius: 12px;
   background: rgba(255, 255, 254, 0.06);
 }
 
 .dark-card i {
-  width: 52px;
-  height: 52px;
-  border-radius: 18px;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
   background: #ff8ba7;
 }
 
 .dark-card span {
-  height: 10px;
+  height: 4px;
   border-radius: 999px;
   background: rgba(255, 255, 254, 0.7);
 }
@@ -172,49 +176,60 @@
 }
 
 .dark-card em {
-  width: 84px;
-  height: 24px;
+  width: 32px;
+  height: 10px;
   border-radius: 999px;
   background: #ff8ba7;
 }
 
 .template-body h2 {
-  margin-bottom: 10px;
-  font-size: 1.35rem;
+  margin-bottom: 12px;
+  font-size: 1.28rem;
   font-weight: 900;
+  line-height: 1.35;
+}
+
+.template-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .template-body p {
-  margin-bottom: 22px;
+  margin-bottom: 30px;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 0.98rem;
+  font-weight: 500;
 }
 
 .template-actions {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: auto;
 }
 
 .template-actions button {
-  min-height: 46px;
+  min-height: 52px;
+  padding: 0 10px;
   border: 0;
   border-radius: 999px;
   background: var(--main);
   color: var(--text);
   font: inherit;
   font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-size: 0.88rem;
   font-weight: 800;
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
 }
 
 .template-actions button:nth-child(2) {
-  background: var(--tertiary);
+  background: var(--main);
 }
 
 .template-actions button:nth-child(3) {
-  background: var(--accent);
+  background: var(--main);
 }
 
 .template-actions button:hover {
@@ -316,11 +331,50 @@
   }
 
   .template-card {
+    display: grid;
+    grid-template-columns: 66px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 16px;
+    min-height: auto;
     padding: 18px;
   }
 
   .template-preview {
-    min-height: 160px;
+    grid-row: 1 / 4;
+    width: 66px;
+    height: 66px;
+    min-height: 66px;
+    margin-bottom: 0;
+    border-radius: 22px;
+  }
+
+  .template-body {
+    display: contents;
+  }
+
+  .template-body h2 {
+    grid-column: 2;
+    margin-bottom: 5px;
+    font-size: 1.08rem;
+  }
+
+  .template-body p {
+    grid-column: 2;
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+
+  .template-actions {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .template-actions button {
+    min-height: 46px;
+    font-size: 0.9rem;
   }
 
   .code-panel {
