@@ -11,7 +11,7 @@
   --soft-accent: rgba(255, 198, 199, 0.4);
   --soft-tertiary: rgba(195, 240, 202, 0.52);
   --card-shadow: 0 14px 34px rgba(51, 39, 42, 0.055);
-  --font-rounded: "Zen Maru Gothic", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --font-rounded: "Nunito", "Zen Maru Gothic", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
 }
 
 * {
