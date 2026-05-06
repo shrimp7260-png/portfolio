@@ -206,21 +206,24 @@
 .template-actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 7px;
   margin-top: auto;
 }
 
 .template-actions button {
-  min-height: 52px;
-  padding: 0 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 8px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 10px;
   background: var(--main);
   color: var(--text);
   font: inherit;
   font-family: "Nunito", "Zen Maru Gothic", sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
 }
@@ -368,14 +371,15 @@
 
   .template-actions {
     grid-column: 2;
-    grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
     margin-top: 0;
   }
 
   .template-actions button {
-    min-height: 46px;
-    font-size: 0.9rem;
+    min-height: 42px;
+    padding: 0 6px;
+    font-size: 0.78rem;
   }
 
   .code-panel {
