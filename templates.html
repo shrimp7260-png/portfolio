@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="コピペで使える個人サイト向けHTML/CSSテンプレート集。">
+  <title>Templates | Mellow Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="templates.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Mellow Games">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Mellow Games</span>
+    </a>
+    <nav class="site-nav" aria-label="サイト内ナビゲーション">
+      <a href="index.html#games">Games</a>
+      <a href="templates.html" aria-current="page">Templates</a>
+    </nav>
+  </header>
+
+  <main class="templates-page">
+    <section class="templates-hero" aria-labelledby="templates-title">
+      <p class="section-label">html/css templates</p>
+      <h1 id="templates-title">Templates</h1>
+      <p class="lead">コピペで使える、個人サイト向けの小さなテンプレート集。</p>
+    </section>
+
+    <section class="template-list" aria-label="テンプレート一覧">
+      <article class="template-card">
+        <div class="template-preview simple-preview" aria-hidden="true">
+          <div class="preview-avatar"></div>
+          <span></span>
+          <span></span>
+          <div class="preview-links"><i></i><i></i><i></i></div>
+        </div>
+        <div class="template-body">
+          <h2>Simple Profile</h2>
+          <p>白背景で中央寄せ。プロフィール、作品リンク、SNSリンクをすっきり置けます。</p>
+          <div class="template-actions">
+            <button type="button" data-action="preview" data-template="simple">プレビューを見る</button>
+            <button type="button" data-action="code" data-template="simple">コードを見る</button>
+            <button type="button" data-action="copy" data-template="simple">コピー</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="template-card">
+        <div class="template-preview retro-preview" aria-hidden="true">
+          <div class="retro-window">
+            <b>START</b>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="template-body">
+          <h2>Retro Game</h2>
+          <p>黒背景と枠線付きウィンドウ。ゲーム作品一覧やドット風サイトに使いやすい形です。</p>
+          <div class="template-actions">
+            <button type="button" data-action="preview" data-template="retro">プレビューを見る</button>
+            <button type="button" data-action="code" data-template="retro">コードを見る</button>
+            <button type="button" data-action="copy" data-template="retro">コピー</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="template-card">
+        <div class="template-preview dark-preview" aria-hidden="true">
+          <div class="dark-card">
+            <i></i>
+            <span></span>
+            <span></span>
+            <em></em>
+          </div>
+        </div>
+        <div class="template-body">
+          <h2>Dark Cute</h2>
+          <p>黒とピンクのプロフィールカード。創作サイトや自己紹介ページ向けです。</p>
+          <div class="template-actions">
+            <button type="button" data-action="preview" data-template="dark">プレビューを見る</button>
+            <button type="button" data-action="code" data-template="dark">コードを見る</button>
+            <button type="button" data-action="copy" data-template="dark">コピー</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="code-panel" id="codePanel" aria-live="polite">
+      <div class="code-panel-head">
+        <div>
+          <p class="section-label">selected code</p>
+          <h2 id="codeTitle">コードを見る</h2>
+        </div>
+        <p id="copyStatus" class="copy-status" role="status"></p>
+      </div>
+      <pre><code id="templateCode">カードの「コードを見る」を押すと、ここにHTML/CSSコードが表示されます。</code></pre>
+    </section>
+
+    <section class="live-preview-panel" id="previewPanel" aria-live="polite">
+      <div class="code-panel-head">
+        <div>
+          <p class="section-label">live preview</p>
+          <h2 id="previewTitle">プレビューを見る</h2>
+        </div>
+      </div>
+      <iframe id="templatePreview" title="テンプレートのライブプレビュー"></iframe>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Mellow Games</p>
+  </footer>
+
+  <script src="templates.js"></script>
+</body>
+</html>

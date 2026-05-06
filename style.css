@@ -118,6 +118,14 @@ a {
   font-weight: 800;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(310px, 0.82fr);
