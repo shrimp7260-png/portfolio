@@ -15,16 +15,20 @@
 .templates-page {
   width: min(1080px, calc(100% - 44px));
   margin: 0 auto;
-  padding: 42px 0 90px;
+  padding: 0 0 90px;
 }
 
 .templates-hero {
-  max-width: 720px;
-  padding: 42px 0 46px;
+  max-width: 760px;
+  padding: 52px 0 42px;
 }
 
 .templates-hero h1 {
   margin-bottom: 18px;
+}
+
+.templates-hero .lead {
+  max-width: none;
 }
 
 .template-list {
@@ -300,11 +304,15 @@
 @media (max-width: 560px) {
   .templates-page {
     width: min(100% - 30px, 1080px);
-    padding: 24px 0 72px;
+    padding: 0 0 72px;
   }
 
   .templates-hero {
-    padding: 30px 0 34px;
+    padding: 34px 0 32px;
+  }
+
+  .templates-hero .lead {
+    max-width: 30rem;
   }
 
   .template-card {
