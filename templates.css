@@ -124,7 +124,7 @@
 }
 
 .retro-window b {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-rounded);
   font-size: 0.7rem;
 }
 
@@ -220,7 +220,7 @@
   background: var(--main);
   color: var(--text);
   font: inherit;
-  font-family: "Nunito", "Zen Maru Gothic", sans-serif;
+  font-family: var(--font-rounded);
   font-size: 0.8rem;
   font-weight: 800;
   line-height: 1;
